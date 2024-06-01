@@ -10,7 +10,7 @@ networks:
 services:
   core-api:
     container_name: "core-api"
-    image: victobonetti\globalsolution-core-api:1.0.0
+    image: victobonetti/globalsolution-core-api:1.0.0
     networks:
       gs:
         ipv4_address: '192.168.5.2'

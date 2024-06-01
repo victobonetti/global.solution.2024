@@ -1,0 +1,66 @@
+POST http://localhost:9091/api
+
+retorno:
+{
+    "id": 1,
+    "altitude": "123",
+    "longitude": "4314",
+    "createdAt": "2024-06-01T13:18:35.468874938",
+    "nomeImagem": "4e5ebe41-a715-44bb-8b17-26deac9ec15a.jpg",
+    "tipoLixo": "detritos marítimos",
+    "descricao": "Praia com areia clara, mar azul e céu limpo"
+}
+
+exemplo requisição:
+
+curl --location 'http://localhost:9091/api' \
+--form 'imagem=@"/C:/Users/victo/OneDrive/Área de Trabalho/White-sand-Beach-1972167168.jpg"' \
+--form 'altitude="123"' \
+--form 'longitude="4314"'
+
+---
+
+GET http://localhost:9091/api
+
+retorno:
+
+[
+    {
+        "id": 1,
+        "altitude": "123",
+        "longitude": "4314",
+        "tipoLixo": "detritos marítimos"
+    },
+    {
+        "id": 2,
+        "altitude": "321",
+        "longitude": "1321",
+        "tipoLixo": "detritos marítimos"
+    }
+]
+
+exemplo requisição:
+
+curl --location --request GET 'http://localhost:9091/api'
+
+---
+
+GET http://localhost:9091/api/{id}
+
+retorno:
+
+{
+    "id": 1,
+    "altitude": "123",
+    "longitude": "4314",
+    "createdAt": "2024-06-01T13:18:35.468875",
+    "imagem": "data:image/jpeg;base64,/9j/4AAQSkZJ... (imagem formatada em Base64);
+    "tipoLixo": "detritos marítimos",
+    "descricao": "Praia com areia clara, mar azul e céu limpo"
+}
+
+exemplo requisição:
+
+curl --location --request GET 'http://localhost:9091/api/1'
+
+
